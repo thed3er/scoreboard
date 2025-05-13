@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Scoreboard</title>
+
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./bootstrap/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./bootstrap/bootstrap-grid.rtl.min.css">
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+
+      <div class="controls" id="controls">
+        <div class="d-flex flex-row">
+          <input type="text" id="homeTeamNameInput" class="p-2 m-2" placeholder="Home Team Name" oninput="setHomeTeamName()"/>
+          <input type="text" id="awayTeamNameInput" class="p-2 m-2" placeholder="Away Team Name" oninput="setAwayTeamName()"/>
+          <input type="number" id="timerInput" class="p-2 m-2" placeholder="Čas (začátek)" oninput="setTimer()" min="0">
+          <input type="number" id="countToTimeInput" class="p-2 m-2" placeholder="Čas (konec)" oninput="setCountToTime()" min="1">
+        </div>
+          <button onclick="addHomePenalty(120)" class="btn btn-light home-team-penalty-button +2">Home Penalty +2</button>
+          <button onclick="addAwayPenalty(120)" class="btn btn-light away-team-penalty-button +2">Away Penalty +2</button>
+          <button onclick="addHomePenalty(60)" class="btn btn-light home-team-penalty-button +1">Home Penalty +1</button>
+          <button onclick="addAwayPenalty(60)" class="btn btn-light away-team-penalty-button +1">Away Penalty +1</button>
+
+        <button onclick="removeFirstHomePenalty()" class="btn btn-light home-team-penalty-button">Odstranit první Home Penalty</button>
+        <button onclick="removeFirstAwayPenalty()" class="btn btn-light away-team-penalty-button">Odstranit první Away Penalty</button>
+      </div>
+
+      <div class="actionButtons">
+        <button onclick="startTimeCounter()" class="btn btn-outline-danger"><img src="./static/play-fill.svg" alt="play icon"/></button>
+        <button onclick="pauseTimeCounter()" class="btn btn-outline-danger"><img src="./static/pause-fill.svg" alt="pause icon"/></button>
+        <button onclick="resetTimeCounter()" class="btn btn-outline-danger"><img src="./static/arrow-counterclockwise.svg" alt="reset icon"/></button>
+        <button onclick="toggleControls()" class="btn btn-outline-danger"><img src="./static/gear-fill.svg" alt="customize icon"/></button>
+
+      </div>
+
+      <div class="timer">
+        <h1 id="timer" class="text-center"></h1>
+      </div>
+
+      <div class="period">
+        <h5 id="period" class="text-center"></h5>
+      </div>
+
+      <div class="scoreBoard row text-center">
+        <div class="homeTeam col">
+          <h2 id="homeTeamName"></h2>
+
+          <button onclick="addGoal('homeTeamScore')" class="btn btn-outline-danger"><img src="./static/chevron-up.svg" alt="šipka nahoru"/></button>
+          <h2 id="homeTeamScore" onclick="addGoal('homeTeamScore')">0</h2>
+          <button onclick="removeGoal('homeTeamScore')" class="btn btn-outline-danger"><img src="./static/chevron-down.svg" alt="šipka dolu"/></button>
+        </div>
+
+        <div class="awayTeam col">
+          <h2 id="awayTeamName"></h2>
+
+          <button onclick="addGoal('awayTeamScore')" class="btn btn-outline-danger"><img src="./static/chevron-up.svg" alt="šipka nahoru"/></button>
+          <h2 id="awayTeamScore" onclick="addGoal('awayTeamScore')">0</h2>
+          <button onclick="removeGoal('awayTeamScore')" class="btn btn-outline-danger"><img src="./static/chevron-down.svg" alt="šipka dolu"/></button>
+
+        </div>
+      </div>
+
+      <div class="penalties row text-center">
+        <div id="homeTeamPenalties" class="col">
+        </div>
+        <div id="awayTeamPenalties" class="col">
+        </div>
+      </div>
+
+     </div>
+    <script src="./scoreboard.js"></script>
+  </body>
+</html>
