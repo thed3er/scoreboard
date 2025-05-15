@@ -6,6 +6,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
+    "sass": "sass ./src/static/styles/main.scss ./src/static/styles/main.css --watch",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "makeWindows": "npx electron-builder --win --x64",
@@ -21,7 +22,9 @@
     "@electron-forge/plugin-auto-unpack-natives": "^7.5.0",
     "@electron-forge/plugin-fuses": "^7.5.0",
     "@electron/fuses": "^1.8.0",
-    "electron": "33.0.2"
+    "electron": "33.0.2",
+    "sass": "^1.88.0",
+    "bootstrap": "^5.3.6"
   },
   "keywords": [],
   "author": {

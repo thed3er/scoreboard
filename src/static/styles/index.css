@@ -15,13 +15,8 @@ body {
     height: 100vh;
 }
 
-.timer {
-    height: 39vh;
-}
 
-#timer {
-    font-size: calc(15px + 31vh);
-}
+
 
 #controls {
     display: none;

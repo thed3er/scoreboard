@@ -1,0 +1,22 @@
+$display-font-sizes: (
+        1: 20rem,
+        2: 4.5rem,
+        3: 4rem,
+        4: 3.5rem,
+        5: 3rem,
+        6: 2.5rem
+);
+
+$display-font-weight: 500;
+$display-line-height: 1;
+$headings-line-height: 1;
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+@import "../../../node_modules/bootstrap/scss/reboot";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/grid";
+@import "../../../node_modules/bootstrap/scss/bootstrap-grid";
+
+
